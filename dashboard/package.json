@@ -1,5 +1,5 @@
 {
-    "name": "container",
+    "name": "dashboard",
     "version": "1.0.0",
     "scripts": {
         "dev": "webpack serve --mode development",

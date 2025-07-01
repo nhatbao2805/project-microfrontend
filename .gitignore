@@ -1,0 +1,35 @@
+# Monorepo Microfrontend .gitignore
+
+# Ignore all node_modules in each app
+container/node_modules/
+auth/node_modules/
+dashboard/node_modules/
+
+# Ignore build/dist folders
+container/dist/
+auth/dist/
+dashboard/dist/
+
+# Ignore compiled output (if any)
+**/build/
+**/out/
+
+# Ignore lock files if you prefer yarn/npm only (optional)
+# yarn.lock
+# package-lock.json
+# pnpm-lock.yaml
+
+# Ignore log files
+*.log
+
+# Ignore dotenv config (optional)
+.env
+.env.*
+
+# IDE specific
+.vscode/
+.idea/
+
+# OS metadata
+.DS_Store
+Thumbs.db

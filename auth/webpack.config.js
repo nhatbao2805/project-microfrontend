@@ -6,7 +6,7 @@ module.exports = {
   entry: "./src/index.tsx",
   mode: "development",
   devServer: {
-    port: 3000,
+    port: 3001,
     historyApiFallback: true,
   },
   output: {
@@ -26,10 +26,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "container",
-      remotes: {
-        auth: "auth@http://localhost:3001/remoteEntry.js",
-        dashboard: "dashboard@http://localhost:3002/remoteEntry.js",
+      name: "auth",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./AuthApp": "./src/bootstrap", // file export ra component gốc
       },
       shared: {
         react: { singleton: true, requiredVersion: "^18.0.0",eager: true },
