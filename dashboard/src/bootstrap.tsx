@@ -9,12 +9,12 @@ const mount = (el: HTMLElement) => {
 };
 
 // ✅ Khi chạy độc lập (localhost:3001)
-if (process.env.NODE_ENV === "development") {
-  const el = document.getElementById("root");
-  if (el) {
-    mount(el);
-  }
-}
+// if (process.env.NODE_ENV === "development") {
+//   const el = document.getElementById("root");
+//   if (el) {
+//     mount(el);
+//   }
+// }
 
 // ✅ Export để container dùng
 export { mount };

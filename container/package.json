@@ -6,20 +6,22 @@
         "build": "webpack --mode production"
     },
     "dependencies": {
+        "@types/react-router-dom": "^5.3.3",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^7.6.3"
     },
     "devDependencies": {
         "@types/react": "^18.2.15",
         "@types/react-dom": "^18.2.7",
         "@types/webpack-env": "^1.18.8",
-        "autoprefixer": "^10.4.19",
+        "autoprefixer": "^10.4.21",
         "css-loader": "^6.10.0",
         "html-webpack-plugin": "^5.6.0",
-        "postcss": "^8.4.38",
+        "postcss": "^8.5.6",
         "postcss-loader": "^7.3.3",
         "style-loader": "^3.3.4",
-        "tailwindcss": "^3.4.1",
+        "tailwindcss": "^3.4.17",
         "ts-loader": "^9.5.1",
         "typescript": "^5.4.0",
         "webpack": "^5.91.0",

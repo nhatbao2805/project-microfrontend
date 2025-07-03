@@ -1,12 +1,18 @@
+// auth/src/AuthApp.tsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, MemoryRouter } from 'react-router-dom';
+import Login from './pages/auth/Login';
+import FormRegister from './pages/auth/FormRegister';
 
-import React from "react";
-
-const AuthApp = () => {
+export default function AuthApp() {
   return (
-    <div className="p-4 text-center text-xl text-blue-600">
-      Hello from AuthApp!
-    </div>
+    <MemoryRouter initialEntries={['/login']}>
+    <Routes>
+      <Route path="/" element={<Navigate to="login" />} />
+      <Route path="login" element={<Login />} />
+      <Route path="register" element={<FormRegister />} />
+    </Routes>
+  </MemoryRouter>
   );
-};
+}
 
-export default AuthApp;

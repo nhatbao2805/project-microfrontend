@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 
@@ -8,9 +9,14 @@ module.exports = {
   devServer: {
     port: 3001,
     historyApiFallback: true,
+    static: {
+      directory: path.resolve(__dirname, 'dist'), 
+    },
   },
   output: {
-    publicPath: "auto",
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: 'auto',
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
@@ -22,14 +28,21 @@ module.exports = {
         loader: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+      }
     ],
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'auth-style.css',
+    }),
     new ModuleFederationPlugin({
       name: "auth",
       filename: "remoteEntry.js",
       exposes: {
-        "./AuthApp": "./src/bootstrap", // file export ra component gốc
+        "./AuthApp": "./src/bootstrap",
       },
       shared: {
         react: { singleton: true, requiredVersion: "^18.0.0",eager: true },

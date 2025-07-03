@@ -1,19 +1,16 @@
 import React, { Suspense, lazy } from "react";
-const RemoteDashboard = lazy(() => import("dashboard/DashboardApp"));
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 const RemoteAuth = lazy(() => import("auth/AuthApp"));
-
-const App = () => {
-  return (
-    <div className="p-4 text-center text-xl text-blue-600">
-      <h1>Container App</h1>
-      <Suspense fallback={<div>Loading Dashboard...</div>}>
-        <RemoteDashboard />
-      </Suspense>
-      <Suspense fallback={<div>Loading Auth...</div>}>
-        <RemoteAuth />
-      </Suspense>
-    </div>
-  );
-};
+const RemoteDashboard = lazy(() => import("dashboard/DashboardApp"));
+const App = () => (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/auth/*" element={<RemoteAuth />} />
+        <Route path="/dashboard/*" element={<RemoteDashboard />} />
+        {/* Các route khác */}
+        <Route path="/" element={<div className="text-[20px] text-red-900">Home Page</div>} />
+      </Routes>
+    </BrowserRouter>
+);
 
 export default App;

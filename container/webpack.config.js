@@ -5,15 +5,18 @@ const path = require("path");
 module.exports = {
   entry: "./src/index.tsx",
   mode: "development",
-  devServer: {
-    port: 3000,
-    historyApiFallback: true,
-  },
   output: {
-    publicPath: "auto",
+    publicPath: "/",
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+  },
+  devServer: {
+    port: 3000,
+    historyApiFallback: true, 
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
   },
   module: {
     rules: [
@@ -22,6 +25,10 @@ module.exports = {
         loader: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      }
     ],
   },
   plugins: [
