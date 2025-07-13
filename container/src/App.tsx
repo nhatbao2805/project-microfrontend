@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingLayout from "./layout/LadingLayout";
 const RemoteAuth = lazy(() => import("auth/AuthApp"));
 const RemoteDashboard = lazy(() => import("dashboard/DashboardApp"));
 const App = () => (
@@ -7,8 +8,7 @@ const App = () => (
       <Routes>
         <Route path="/auth/*" element={<RemoteAuth />} />
         <Route path="/dashboard/*" element={<RemoteDashboard />} />
-        {/* Các route khác */}
-        <Route path="/" element={<div className="text-[20px] text-red-900">Home Page</div>} />
+        <Route path="/" element={<LandingLayout/>} />
       </Routes>
     </BrowserRouter>
 );
