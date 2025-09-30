@@ -1,34 +1,39 @@
 {
-    "name": "dashboard",
-    "version": "1.0.0",
-    "scripts": {
-        "dev": "webpack serve --mode development",
-        "build": "webpack --mode production"
-    },
-    "dependencies": {
-        "@types/react-router-dom": "^5.3.3",
-        "axios": "^1.10.0",
-        "lucide-react": "^0.525.0",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-router-dom": "^7.6.3"
-    },
-    "devDependencies": {
-        "@types/react": "^18.2.15",
-        "@types/react-dom": "^18.2.7",
-        "@types/webpack-env": "^1.18.8",
-        "autoprefixer": "^10.4.19",
-        "css-loader": "^6.10.0",
-        "html-webpack-plugin": "^5.6.0",
-        "mini-css-extract-plugin": "^2.9.2",
-        "postcss": "^8.4.38",
-        "postcss-loader": "^7.3.3",
-        "style-loader": "^3.3.4",
-        "tailwindcss": "^3.4.1",
-        "ts-loader": "^9.5.1",
-        "typescript": "^5.4.0",
-        "webpack": "^5.91.0",
-        "webpack-cli": "^5.1.4",
-        "webpack-dev-server": "^4.15.1"
-    }
+  "name": "dashboard",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "@hello-pangea/dnd": "^18.0.1",
+    "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.10.0",
+    "framer-motion": "^12.23.22",
+    "lucide-react": "^0.525.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.63.0",
+    "react-router-dom": "^7.6.3",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@types/uuid": "^11.0.0",
+    "@types/webpack-env": "^1.18.8",
+    "autoprefixer": "^10.4.19",
+    "css-loader": "^6.10.0",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss": "^8.4.38",
+    "postcss-loader": "^7.3.3",
+    "style-loader": "^3.3.4",
+    "tailwindcss": "^3.4.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
 }
