@@ -13,9 +13,9 @@ module.exports = {
   },
   devServer: {
     port: 3000,
-    historyApiFallback: true, 
+    historyApiFallback: true,
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: path.join(__dirname, "dist"),
     },
   },
   module: {
@@ -28,7 +28,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader", "postcss-loader"],
-      }
+      },
     ],
   },
   plugins: [
@@ -39,7 +39,7 @@ module.exports = {
         dashboard: "dashboard@http://localhost:3002/remoteEntry.js",
       },
       shared: {
-        react: { singleton: true, requiredVersion: "^18.0.0",eager: true },
+        react: { singleton: true, requiredVersion: "^18.0.0", eager: true },
         "react-dom": { singleton: true, requiredVersion: "^18.0.0" },
       },
     }),

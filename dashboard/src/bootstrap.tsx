@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import DashboardApp from "./DashboardApp";
-
+import "./index.css";
 // ✅ Cho phép container import component
 const mount = (el: HTMLElement) => {
   const root = ReactDOM.createRoot(el);

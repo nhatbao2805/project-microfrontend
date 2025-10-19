@@ -1,22 +1,23 @@
 // src/pages/Login.tsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../../services/auth.service";
+import { chatServiceTest, login } from "../../services/auth.service";
 
 export default function Login() {
   const navigate = useNavigate();
-    const [formValue, setFormValue] = useState({
+  const [formValue, setFormValue] = useState({
     email: "",
-    password:''
-    });
+    password: "",
+  });
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-        const response = await login(formValue);
-        console.log("Đăng ký thành công:", formValue);
-      } catch (error) {
-        console.log("Đăng ký thành công:", error);
-      }
+      console.log("formValue:", formValue.email);
+      const response = await chatServiceTest(formValue.email);
+      console.log("Đăng ký thành công:", formValue);
+    } catch (error) {
+      console.log("Đăng ký thành công:", error);
+    }
   };
 
   return (
@@ -32,11 +33,13 @@ export default function Login() {
               Email
             </label>
             <input
-              type="email"
+              type="text"
               required
               placeholder="you@example.com"
               value={formValue.email}
-              onChange={(e) => setFormValue({ ...formValue, email: e.target.value })}
+              onChange={(e) =>
+                setFormValue({ ...formValue, email: e.target.value })
+              }
               className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
@@ -46,12 +49,14 @@ export default function Login() {
               Mật khẩu
             </label>
             <input
-                type="password"
-                required
-                placeholder="••••••••"
-                value={formValue.password}
-                onChange={(e) => setFormValue({ ...formValue, password: e.target.value })}
-                className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+              type="password"
+              required
+              placeholder="••••••••"
+              value={formValue.password}
+              onChange={(e) =>
+                setFormValue({ ...formValue, password: e.target.value })
+              }
+              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
 

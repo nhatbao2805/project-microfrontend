@@ -10,11 +10,11 @@ interface Login {
   email: string;
   password: string;
 }
-  const path = 'users'
+const path = "users";
 
 const registerUser = async (data: RegisterUser) => {
   try {
-    const response = await axiosInstance.post(path+"/register",data);
+    const response = await axiosInstance.post(path + "/register", data);
     return response.data;
   } catch (error) {
     console.error("Error fetching products", error);
@@ -24,7 +24,16 @@ const registerUser = async (data: RegisterUser) => {
 
 const login = async (data: Login) => {
   try {
-    const response = await axiosInstance.post("auth/login",data);
+    const response = await axiosInstance.post("auth/login", data);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching products", error);
+    throw error;
+  }
+};
+const chatServiceTest = async (data: string) => {
+  try {
+    const response = await axiosInstance.post("chat", { prompt: data }); // 👈 wrap trong object
     return response.data;
   } catch (error) {
     console.error("Error fetching products", error);
@@ -32,4 +41,4 @@ const login = async (data: Login) => {
   }
 };
 
-export { registerUser,login };
+export { registerUser, login, chatServiceTest };
